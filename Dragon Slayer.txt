@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dragon Slayer 2.0</title>
+  </head>
+  <body>
+      <script>
+confirm("A huge dragon obstructs your path! What will you do?!!");
+var playerChoice= prompt("CHOOSE: 'Slay' or 'Dodge'").toUpperCase();
+var playerWeapon = true;
+var SLAY = true;
+var DODGE = true;
+var SWORD = true;
+var GUN = true;
+var LANCE = true;
+var GREATSWORD = true;
+var AXE = true;
+var BOW = true;
+var KNIFE = true;
+var SCYTHE = true;
+var FISTS = true;
+var HAMMER = true;
+var WHIP = true;
+var slaying = true;
+var dodging = true;
+var youHit = Math.floor(Math.random()*30);
+var youDodge = Math.floor(Math.random()*30);
+var damageThisRound = Math.floor(Math.random()*60+20);
+var totalDamage = 0;
+var speedThisRound = Math.floor(Math.random()*60+20);
+var totalSpeed = 0;
+
+if(playerChoice==='SLAY'){
+  var playerWeapon= prompt("Select Your Weapon").toUpperCase();
+while (slaying) {
+    if (youHit) {
+      switch(playerWeapon){
+        case 'SWORD':
+        case 'LANCE':
+        case 'GREATSWORD':
+        case 'AXE':
+        case 'KNIFE':
+        case 'SCYTHE':
+        case 'FISTS':
+        case 'HAMMER':
+        case 'WHIP':
+            document.write("You swung your "+playerWeapon+" with all your strength and did "+damageThisRound+" damage!");
+            break;
+        case 'BOW':
+        case 'GUN':
+            document.write("You shot your "+playerWeapon+" with great accuracy and did "+damageThisRound+" damage!");
+            break;
+        default:
+              document.write("Choose One!");
+            break;
+          }
+      totalDamage+=damageThisRound;
+            if (totalDamage >= 50) {
+                document.write(" You slew the dragon");
+                slaying = false;
+        } else {
+              youHit = Math.floor(Math.random() * 30);
+        }
+    } else {
+        document.write(" Oh No, Your "+playerWeapon+" Was Not Strong Enough! The Dragon beat you...");
+    slaying = false;
+    }
+}
+}
+
+if(playerChoice==='DODGE'){
+while (dodging){
+    if (youDodge){
+      document.write("You ran quickly out of the way at "+speedThisRound+" miles per hour!");
+      totalSpeed+=speedThisRound;
+        if (totalSpeed >= 50){
+          document.write("You moved like a fish in water, you're safe!");
+          dodging=false;
+        }
+          var playerChoice= prompt("But the dragon must be defeated...will you play again? Yes or No").toUpperCase();
+            if (playerChoice==='YES') {  var playerWeapon= prompt("Select Your Weapon").toUpperCase();
+                if(playerWeapon==='SWORD'||'GREATSWORD'||'LANCE'||'KNIFE'||'AXE')
+            while (slaying) {
+                if (youHit) {
+                    document.write("You swung your "+playerWeapon+" with all your strength and did "+damageThisRound+" damage!");
+                    totalDamage+=damageThisRound;
+                        if (totalDamage >= 50) {
+                            document.write(" You slew the dragon");
+                            slaying = false;
+                    } else {
+                          youHit = Math.floor(Math.random() * 30);
+                    }
+                } else {
+                    document.write("Oh No The Dragon beat you!");
+                slaying = false;
+                }
+            }}
+           else {
+            youHit = Math.floor(Math.random() * 30);
+            document.write(" The dragon flies off to terrorize yet another village...");
+            dodging=false;
+          }
+      } else {
+          document.write("The dragon ate you up, slowpoke. ");
+          document.write("Game Over");
+          dodging=false;
+      }
+        }
+    }
+    </script>
+</body>
+</html>
