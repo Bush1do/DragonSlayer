@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Dragon Slayer 2.0</title>
-  </head>
-  <body>
-<script src="DragonSlayer.js"></script>
-      <script>
 var playerName= prompt("Halt, Traveler! What Is Your Name?");
 var playerGender= prompt("These Eyes Of Mine Are Failing Me... Are You A Man Or a Woman?").toLowerCase();
 confirm("A Huge Dragon Obstructs Your Path! The Dragon Is Charging Towards You With Amazing Speed... What Will You Do?!!");
@@ -179,8 +171,3 @@ if (playerChoice === 'NO'){
     confirm("With a Heavy Heart, You Return to Your Village...");
 }
 confirm("A WANDERING PRIEST");
-
-    </script>
-    <p>"Refresh to Play Again!"</p>
-</body>
-</html>
